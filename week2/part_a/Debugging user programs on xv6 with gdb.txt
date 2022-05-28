@@ -1,0 +1,6 @@
+List the different functions which are encountered after int ret = fork() is run until fork function in proc.c is called.
+
+    
+    While in the function trap in trap.c, print the trap number for T_SYSCALL.
+    While in the function syscall in syscall.c, print the system call number.
+    While in the fork function (in proc.c), after the new process is created, print the name, pid, state of the new program and that of its parent.
