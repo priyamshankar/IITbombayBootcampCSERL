@@ -7,6 +7,7 @@
 #include "proc.h"
 #include "spinlock.h"
 
+//week 3 completed
 struct
 {
   struct spinlock lock;
