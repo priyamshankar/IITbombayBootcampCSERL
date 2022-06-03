@@ -376,7 +376,9 @@ void scheduler(void)
     {
       if (p->state != RUNNABLE)
         continue;
-
+      
+      if(p->PAUSE!=0)
+        continue;
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
@@ -628,4 +630,55 @@ int get_siblings_info(int pid)
   return 0;
 }
 
-// int signal
+//program to compare two strings
+int compare(char a[],char b[])  
+{  
+    int flag=0,i=0;  // integer variables declaration  
+    while(a[i]!='\0' &&b[i]!='\0')  // while loop  
+    {  
+       if(a[i]!=b[i])  
+       {  
+           flag=1;  
+           break;  
+       }  
+       i++;  
+    }  
+    if(flag==0)  
+    return 1;  
+    else  
+    return 0;  
+}  
+
+void signalProcess(int pid, char type[]){
+  // cprintf("%d\n%d\n",pid,myproc()->pid);
+
+  struct proc *p;
+  acquire(&ptable.lock);
+  // char type1=type[0];
+  for (p=ptable.proc; p<&ptable.proc[NPROC];p++){
+    if(pid==p->pid){
+      // p->state=type1;
+      if(compare(type,"PAUSE")){
+        cprintf("pause");
+        p->PAUSE=1;
+        break;
+      }
+      if(compare(type,"CONTINUE")){
+        cprintf("continue");
+        // p->state=RUNNABLE;
+        p->PAUSE=0;
+        break;
+      }
+      if(compare(type,"KILL")){
+
+        // p->killed=1;
+        // kill(pid);
+        p->state=ZOMBIE;
+        break;
+      }
+
+    }
+  }
+  release(&ptable.lock);
+  // sched();
+}

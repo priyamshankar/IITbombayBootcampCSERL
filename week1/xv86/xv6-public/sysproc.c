@@ -106,6 +106,14 @@ int sys_get_siblings_info(int pid){
   
   return get_siblings_info(sys_getpid());
 }
-int sys_signalProcess(int pid,char type){
-  return 0;
+void sys_signalProcess(int pid,char type[]){
+  // return 0;
+
+  // char **type2=&type1;
+  argint(0,&pid);
+  char **type1=&type;
+  argstr(1,type1); 
+  // cprintf("%s\n",*type1);
+
+  signalProcess(pid,*type1);
 }

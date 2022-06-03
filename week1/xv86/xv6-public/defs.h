@@ -122,7 +122,7 @@ void            wakeup(void*);
 void            yield(void);
 int             get_siblings_info(int);
 int             getppid(void);
-int             signalProcess(int, char*);
+void            signalProcess(int, char[]);
 
 // swtch.S
 void            swtch(struct context**, struct context*);
