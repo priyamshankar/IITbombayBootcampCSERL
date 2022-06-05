@@ -392,3 +392,10 @@ copyout(pde_t *pgdir, uint va, void *p, uint len)
 //PAGEBREAK!
 // Blank page.
 
+int retNumvp(){
+  return 69;
+}
+
+int retNumpp(){
+  return 59;
+}

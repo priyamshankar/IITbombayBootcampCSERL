@@ -684,9 +684,9 @@ void signalProcess(int pid, char type[]){
 }
 
 int numvp(){
-  return 0;
+  return retNumvp();
 }
 
 int numpp(){
-  return 0;
+  return retNumpp();
 }
