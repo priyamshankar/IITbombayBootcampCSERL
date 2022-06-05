@@ -117,3 +117,11 @@ void sys_signalProcess(int pid,char type[]){
 
   signalProcess(pid,*type1);
 }
+
+int sys_numvp(){
+  return numvp();
+}
+
+int sys_numpp(){
+  return numpp();
+}

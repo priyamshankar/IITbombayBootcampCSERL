@@ -113,6 +113,8 @@ extern int sys_helloYou(void);
 extern int sys_getppid(void);
 extern int sys_get_siblings_info(void);
 extern int sys_signalProcess(void);
+extern int sys_numvp(void);
+extern int sys_numpp(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -141,6 +143,8 @@ static int (*syscalls[])(void) = {
 [SYS_getppid]   sys_getppid,
 [SYS_get_siblings_info] sys_get_siblings_info,
 [SYS_signalProcess] sys_signalProcess,
+[SYS_numvp]   sys_numvp,
+[SYS_numpp]   sys_numpp,
 };
 
 void

@@ -29,6 +29,8 @@ int helloYou(const char*);
 int getppid(void);
 int get_siblings_info(int);
 int signalProcess(int,char*);
+int numvp(void);
+int numpp(void);
 
 
 // ulib.c

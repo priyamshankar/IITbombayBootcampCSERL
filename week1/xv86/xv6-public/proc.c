@@ -682,3 +682,11 @@ void signalProcess(int pid, char type[]){
   release(&ptable.lock);
   // sched();
 }
+
+int numvp(){
+  return 0;
+}
+
+int numpp(){
+  return 0;
+}

@@ -123,6 +123,8 @@ void            yield(void);
 int             get_siblings_info(int);
 int             getppid(void);
 void            signalProcess(int, char[]);
+int             numvp(void);
+int             numpp(void);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

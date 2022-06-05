@@ -25,3 +25,5 @@
 #define SYS_getppid  24  //user defined
 #define SYS_get_siblings_info 25//user defined
 #define SYS_signalProcess 26 //user defined
+#define SYS_numvp   27
+#define SYS_numpp   28
