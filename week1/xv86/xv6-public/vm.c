@@ -392,10 +392,37 @@ copyout(pde_t *pgdir, uint va, void *p, uint len)
 //PAGEBREAK!
 // Blank page.
 
-int retNumvp(){
-  return 69;
-}
+// int retNumvp(){
+//   return 0;
+// }
 
 int retNumpp(){
-  return 59;
+  int ii=0;
+  pde_t *pgdir=myproc()->pgdir;
+  pte_t *pte;
+  char *a, *last;
+  struct kmap *k;
+  k=kmap;
+  // void *va = k->virt;
+  uint size = k->phys_end - k->phys_start;
+  uint pa = k->phys_start;
+  // int perm
+  a = (char*)PGROUNDDOWN((uint)pa);
+  last=(char*)PGROUNDDOWN(((uint)pa)+size -1);
+  for(;;){
+    if((pte = walkpgdir(pgdir, a, 0)) == 0)
+      return -1;
+    // if(*pte & PTE_P)
+      // panic("remap");
+    // *pte = pa | perm | PTE_P;
+    if(a == last)
+      break;
+    a += PGSIZE;
+    pa += PGSIZE;
+    if((PTE_P & *pte)!=0){
+      ii++;
+    }
+  }
+
+  return ii;
 }

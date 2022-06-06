@@ -6,7 +6,7 @@
 801003c6 cgaputc
 801004da consputc
 80100535 printint
-80106930 digits.0
+80106990 digits.0
 00000000 exec.c
 00000000 file.c
 00000000 fs.c
@@ -30,9 +30,9 @@
 00000000 kalloc.c
 00000000 kbd.c
 8011167c shift.1
-80106c60 shiftcode
-80106b60 togglecode
-80106b40 charcode.0
+80106cc0 shiftcode
+80106bc0 togglecode
+80106ba0 charcode.0
 80108200 normalmap
 80108100 shiftmap
 80108000 ctlmap
@@ -63,13 +63,13 @@
 8010302e allocproc
 8010a000 first.2
 80113d54 initproc
-80106f68 states.1
-80106f50 states.0
+80106fc8 states.1
+80106fb0 states.0
 00000000 sleeplock.c
 00000000 spinlock.c
 00000000 string.c
 00000000 syscall.c
-80106fe0 syscalls
+80107040 syscalls
 00000000 sysfile.c
 801041f4 argfd
 80104254 fdalloc
@@ -205,7 +205,6 @@
 80105757 vector92
 80105e0b vector244
 80101736 stati
-801068a2 retNumvp
 8010592b vector140
 80104dd6 sys_kill
 801055b0 vector45
@@ -374,7 +373,7 @@
 801056fd vector82
 80105d03 vector222
 80105471 vector8
-801068a8 retNumpp
+801068a2 retNumpp
 80105997 vector149
 8010140e iupdate
 80108000 data
