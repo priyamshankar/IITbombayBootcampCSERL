@@ -684,7 +684,9 @@ void signalProcess(int pid, char type[]){
 }
 
 int numvp(){
-  return retNumvp();
+  int x = myproc()->sz/PGSIZE;
+  // return retNumvp();
+  return x;
 }
 
 int numpp(){

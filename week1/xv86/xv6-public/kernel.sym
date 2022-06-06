@@ -138,7 +138,7 @@
 8010a520 bcache
 80105aab vector172
 80105de7 vector241
-80103c5c getcallerpcs
+80103c61 getcallerpcs
 80104a4e sys_mkdir
 80105e77 vector253
 80105444 vector3
@@ -189,7 +189,7 @@
 80105ac3 vector174
 80105dff vector243
 80100c03 fileinit
-80103c41 initlock
+80103c46 initlock
 8010589b vector128
 80106828 copyout
 801056f4 vector81
@@ -304,7 +304,7 @@
 801008ce exec
 80105967 vector145
 801044f8 sys_write
-80103de2 release
+80103de7 release
 8010409b fetchstr
 801057de vector107
 80105583 vector40
@@ -357,11 +357,11 @@
 801054bd vector18
 0000008a _binary_entryother_size
 801117a0 cpus
-80103bb8 releasesleep
+80103bbd releasesleep
 80105772 vector95
-80103d3e holding
+80103d43 holding
 801115b4 sb
-80103d7d acquire
+80103d82 acquire
 80105d33 vector226
 80101be5 nameiparent
 801055d4 vector49
@@ -388,7 +388,7 @@
 80105a3f vector163
 80105d93 vector234
 801028a7 log_write
-80103b69 acquiresleep
+80103b6e acquiresleep
 8010474c sys_unlink
 80105649 vector62
 801054fc vector25
@@ -419,7 +419,7 @@
 80102360 lapicid
 80105b5f vector187
 801032cb growproc
-80103bf3 holdingsleep
+80103bf8 holdingsleep
 80111784 ncpu
 80105529 vector30
 801031e3 userinit
@@ -484,14 +484,14 @@
 80101b1c dirlink
 0000002c _binary_initcode_size
 8010597f vector147
-80103b36 initsleeplock
+80103b3b initsleeplock
 80101ce9 ideinit
 801063ce loaduvm
 801057c3 vector104
 8010582f vector116
 80111d20 ptable
 80101f61 ioapicenable
-80103cde popcli
+80103ce3 popcli
 8010a008 vectors
 801055ef vector52
 801054b6 vector17
@@ -499,7 +499,7 @@
 80104030 strlen
 80104cbc sys_pipe
 801012da iinit
-80103b29 numpp
+80103b2e numpp
 80102d00 picinit
 80105c4f vector207
 80106365 inituvm
@@ -533,7 +533,7 @@
 80104ab0 sys_mknod
 80102398 lapicstartap
 80106205 switchuvm
-80103ca2 pushcli
+80103ca7 pushcli
 80102083 kinit2
 80105488 vector11
 8010549d vector14
