@@ -1,0 +1,16 @@
+Q1. Which function is used to initialize a spinlock?
+Initlock function is used to initialize a spinlock.
+
+Q2. What do the attributes name, locked and cpu contain for a spinlock?
+
+Q3. What functions are used for obtaining and releasing a spinlock?
+for obtaining the spinlock acquire function is called and to release it release function is used.
+
+Q4. What is the role of the holding() function?
+holding function is used to check if the cpu is holding the lock or not.
+
+Q5. What does xchg() do?
+xchg is a 
+Q6. Why do we use xchg() instead of manually checking a lock's status using an if condition?
+Q7. Why do we use while for checking the lock's condition instead of using an if condition?
+Q8. Why is asm volatile() used in release() instead of using a simple C statement: lk->locked = 0?
