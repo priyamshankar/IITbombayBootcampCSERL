@@ -185,15 +185,18 @@ UPROGS=\
 	_zombie\
 	_testcase\
 	_debug\
-	_cmd\
 	_manSyCall\
 	_my_siblings\
-	_appPid\
-	_tes\
 	_orphaned\
 	_signal_test\
 	_test-mmap\
 	_test-numppvp\
+	_test\
+	_test-multiprocess\
+	_pri\
+	_appPid\
+	_tes\
+	_cmd\
 	
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -262,7 +265,8 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
 
 EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
-	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c testcase.c debug.c cmd.c manSyCall.c my_siblings.c appPid.c tes.c orphaned.c signal_test.c test-mmap.c test-numppvp.c\
+	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c testcase.c debug.c cmd.c manSyCall.c my_siblings.c appPid.c tes.c orphaned.c signal_test.c test-mmap.c test-numppvp.c pri.c \
+	test.c test-multiprocess.c\
 	printf.c umalloc.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
 	.gdbinit.tmpl gdbutil\

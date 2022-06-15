@@ -42,7 +42,7 @@ forktest(void)
   int n, pid;
 
   printf(1, "fork test\n");
-  2c:	68 60 03 00 00       	push   $0x360
+  2c:	68 a8 03 00 00       	push   $0x3a8
   31:	6a 01                	push   $0x1
   33:	e8 c8 ff ff ff       	call   0 <printf>
 
@@ -86,14 +86,14 @@ forktest(void)
     printf(1, "fork claimed to work N times!\n", N);
   77:	83 ec 04             	sub    $0x4,%esp
   7a:	68 e8 03 00 00       	push   $0x3e8
-  7f:	68 a0 03 00 00       	push   $0x3a0
+  7f:	68 e8 03 00 00       	push   $0x3e8
   84:	6a 01                	push   $0x1
   86:	e8 75 ff ff ff       	call   0 <printf>
     exit();
   8b:	e8 f8 01 00 00       	call   288 <exit>
       printf(1, "wait stopped early\n");
   90:	83 ec 08             	sub    $0x8,%esp
-  93:	68 6b 03 00 00       	push   $0x36b
+  93:	68 b3 03 00 00       	push   $0x3b3
   98:	6a 01                	push   $0x1
   9a:	e8 61 ff ff ff       	call   0 <printf>
       exit();
@@ -111,7 +111,7 @@ forktest(void)
 
   printf(1, "fork test OK\n");
   ae:	83 ec 08             	sub    $0x8,%esp
-  b1:	68 92 03 00 00       	push   $0x392
+  b1:	68 da 03 00 00       	push   $0x3da
   b6:	6a 01                	push   $0x1
   b8:	e8 43 ff ff ff       	call   0 <printf>
 }
@@ -121,7 +121,7 @@ forktest(void)
   c4:	c3                   	ret    
     printf(1, "wait got too many\n");
   c5:	83 ec 08             	sub    $0x8,%esp
-  c8:	68 7f 03 00 00       	push   $0x37f
+  c8:	68 c7 03 00 00       	push   $0x3c7
   cd:	6a 01                	push   $0x1
   cf:	e8 2c ff ff ff       	call   0 <printf>
     exit();
@@ -622,6 +622,61 @@ SYSCALL(numvp)
  357:	c3                   	ret    
 
 00000358 <numpp>:
+SYSCALL(numpp)
  358:	b8 1c 00 00 00       	mov    $0x1c,%eax
  35d:	cd 40                	int    $0x40
  35f:	c3                   	ret    
+
+00000360 <init_counter>:
+
+SYSCALL(init_counter)
+ 360:	b8 1d 00 00 00       	mov    $0x1d,%eax
+ 365:	cd 40                	int    $0x40
+ 367:	c3                   	ret    
+
+00000368 <update_cnt>:
+SYSCALL(update_cnt)
+ 368:	b8 1e 00 00 00       	mov    $0x1e,%eax
+ 36d:	cd 40                	int    $0x40
+ 36f:	c3                   	ret    
+
+00000370 <display_count>:
+SYSCALL(display_count)
+ 370:	b8 1f 00 00 00       	mov    $0x1f,%eax
+ 375:	cd 40                	int    $0x40
+ 377:	c3                   	ret    
+
+00000378 <init_counter_1>:
+SYSCALL(init_counter_1)
+ 378:	b8 20 00 00 00       	mov    $0x20,%eax
+ 37d:	cd 40                	int    $0x40
+ 37f:	c3                   	ret    
+
+00000380 <update_cnt_1>:
+SYSCALL(update_cnt_1)
+ 380:	b8 21 00 00 00       	mov    $0x21,%eax
+ 385:	cd 40                	int    $0x40
+ 387:	c3                   	ret    
+
+00000388 <display_count_1>:
+SYSCALL(display_count_1)
+ 388:	b8 22 00 00 00       	mov    $0x22,%eax
+ 38d:	cd 40                	int    $0x40
+ 38f:	c3                   	ret    
+
+00000390 <init_counter_2>:
+SYSCALL(init_counter_2)
+ 390:	b8 23 00 00 00       	mov    $0x23,%eax
+ 395:	cd 40                	int    $0x40
+ 397:	c3                   	ret    
+
+00000398 <update_cnt_2>:
+SYSCALL(update_cnt_2)
+ 398:	b8 24 00 00 00       	mov    $0x24,%eax
+ 39d:	cd 40                	int    $0x40
+ 39f:	c3                   	ret    
+
+000003a0 <display_count_2>:
+ 3a0:	b8 25 00 00 00       	mov    $0x25,%eax
+ 3a5:	cd 40                	int    $0x40
+ 3a7:	c3                   	ret    

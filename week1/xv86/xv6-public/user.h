@@ -31,6 +31,15 @@ int get_siblings_info(int);
 int signalProcess(int,char*);
 int numvp(void);
 int numpp(void);
+void init_counter(void);
+void update_cnt(void);
+int  display_count(void);
+void init_counter_1(void);
+void update_cnt_1(int);
+int  display_count_1(void);
+void init_counter_2(void);
+void update_cnt_2(int);
+int  display_count_2(void);
 
 
 // ulib.c

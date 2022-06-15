@@ -475,7 +475,6 @@ SYSCALL(uptime)
  268:	c3                   	ret    
 
 00000269 <hello>:
-
 SYSCALL(hello)
  269:	b8 16 00 00 00       	mov    $0x16,%eax
  26e:	cd 40                	int    $0x40

@@ -115,6 +115,16 @@ extern int sys_get_siblings_info(void);
 extern int sys_signalProcess(void);
 extern int sys_numvp(void);
 extern int sys_numpp(void);
+// custom function declaration that gets called
+extern int sys_init_counter(void);
+extern int sys_update_cnt(void);
+extern int sys_display_count(void);
+extern int sys_init_counter_1(void);
+extern int sys_update_cnt_1(void);
+extern int sys_display_count_1(void);
+extern int sys_init_counter_2(void);
+extern int sys_update_cnt_2(void);
+extern int sys_display_count_2(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -145,6 +155,16 @@ static int (*syscalls[])(void) = {
 [SYS_signalProcess] sys_signalProcess,
 [SYS_numvp]   sys_numvp,
 [SYS_numpp]   sys_numpp,
+// Custom syscall pointer
+[SYS_init_counter]      sys_init_counter,
+[SYS_update_cnt]        sys_update_cnt,
+[SYS_display_count]     sys_display_count,
+[SYS_init_counter_1]    sys_init_counter_1,
+[SYS_update_cnt_1]      sys_update_cnt_1,
+[SYS_display_count_1]   sys_display_count_1,
+[SYS_init_counter_2]    sys_init_counter_2,
+[SYS_update_cnt_2]      sys_update_cnt_2,
+[SYS_display_count_2]   sys_display_count_2,
 };
 
 void

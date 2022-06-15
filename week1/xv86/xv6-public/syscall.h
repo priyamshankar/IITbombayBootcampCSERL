@@ -27,3 +27,13 @@
 #define SYS_signalProcess 26 //user defined
 #define SYS_numvp   27
 #define SYS_numpp   28
+// Assignment system calls for the global counter
+#define SYS_init_counter    29
+#define SYS_update_cnt      30
+#define SYS_display_count   31
+#define SYS_init_counter_1  32
+#define SYS_update_cnt_1    33
+#define SYS_display_count_1 34
+#define SYS_init_counter_2  35
+#define SYS_update_cnt_2    36
+#define SYS_display_count_2 37

@@ -550,7 +550,6 @@ SYSCALL(uptime)
  2fb:	c3                   	ret    
 
 000002fc <hello>:
-
 SYSCALL(hello)
  2fc:	b8 16 00 00 00       	mov    $0x16,%eax
  301:	cd 40                	int    $0x40

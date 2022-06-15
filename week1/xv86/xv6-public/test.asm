@@ -505,7 +505,6 @@ SYSCALL(uptime)
  29c:	c3                   	ret    
 
 0000029d <hello>:
-
 SYSCALL(hello)
  29d:	b8 16 00 00 00       	mov    $0x16,%eax
  2a2:	cd 40                	int    $0x40
