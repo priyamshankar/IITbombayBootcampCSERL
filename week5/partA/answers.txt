@@ -1,17 +1,22 @@
 Q1. Which function is used to initialize a spinlock?
 Initlock function is used to initialize a spinlock.
 
+
 Q2. What do the attributes name, locked and cpu contain for a spinlock?
 The name attribute contains the name of the programme containing the lock, the locked attribute contains the status of the lock if the lock is held or not, and cpu conatains the information of the cpu containing the lock.
+
 
 Q3. What functions are used for obtaining and releasing a spinlock?
 for obtaining the spinlock acquire function is called and to release it release function is used.
 
+
 Q4. What is the role of the holding() function?
 holding function is used to check if the cpu is holding the lock or not.
 
+
 Q5. What does xchg() do?
 Locks are implemented usin hardware atomic instructions, for that in xv6 we use exchange like xchg(), this is a function which tries to set the lock position to 1 and return the previous value like test and set instructions.
+
 
 Q6. Why do we use xchg() instead of manually checking a lock's status using an if condition?
 A lock should be
@@ -22,3 +27,4 @@ if the condition for the lock is satusfied then it will show the sucess but if n
 
 
 Q8. Why is asm volatile() used in release() instead of using a simple C statement: lk->locked = 0?
+the code in xv6 can't use a c assignment since it may not be atomic there fore we use asm volatile which is not the case i other real operating system.
