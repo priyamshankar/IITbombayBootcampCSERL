@@ -18,7 +18,7 @@ int main(void)
             2. define and call the function 'int holding_mylock(int id)' to check the status of
                the lock in two scenarios - i) when the lock is held and ii) when the lock is not held. 
     */
-
+    printf(1,"init: %d\nacq: %d \nrel: %d \nhol: %d\n", init_mylock(),acquire_mylock(11), release_mylock(12),holding_mylock(13));
     for(int i=0; i<10000; i++){
         update_cnt();
     }

@@ -179,13 +179,16 @@ int sys_init_mylock(){
 }
 
 int sys_acquire_mylock(int id){
+  argint(0,&id);
   return acquire_mylock(id);
 }
 
 int sys_release_mylock(int id){
+  argint(0,&id);
   return release_mylock(id);
 }
 
 int sys_holding_mylock(int id){
+  argint(0,&id);
   return holding_mylock(id);
 }

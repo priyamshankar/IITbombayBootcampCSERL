@@ -698,13 +698,16 @@ int init_mylock(){
 }
 
 int acquire_mylock(int id){
+  argint(0,&id);
   return id;
 }
 
 int release_mylock(int id){
+  argint(0,&id);
   return id;
 }
 
 int holding_mylock(int id){
+  argint(0,&id);
   return id;
 }

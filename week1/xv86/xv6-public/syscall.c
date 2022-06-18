@@ -126,9 +126,9 @@ extern int sys_init_counter_2(void);
 extern int sys_update_cnt_2(void);
 extern int sys_display_count_2(void);
 extern int sys_init_mylock(void);
-extern int sys_acquire_mylock(int);
-extern int sys_release_mylock(int);
-extern int sys_holding_mylock(int);
+extern int sys_acquire_mylock(void);
+extern int sys_release_mylock(void);
+extern int sys_holding_mylock(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
