@@ -694,7 +694,8 @@ int numpp(){
 }
 
 int init_mylock(){
-  return 0;
+  return init_mylockLC(&ptable.lock);
+  // return 0;
 }
 
 int acquire_mylock(int id){

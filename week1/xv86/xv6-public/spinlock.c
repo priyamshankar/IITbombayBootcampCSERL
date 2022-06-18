@@ -124,3 +124,18 @@ popcli(void)
     sti();
 }
 
+int init_mylockLC(struct spinlock *lk){
+  int counter=0;
+  while( lk->exists[counter]==1 && counter<=10){
+    // cprintf("%d\n",lk->exists[0]);
+    counter++;
+  }
+  if(counter==11){
+    return -1;
+  }
+  else{
+    lk->exists[counter]=1;
+    return counter;
+  }
+
+}
