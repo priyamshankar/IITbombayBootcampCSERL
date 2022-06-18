@@ -692,3 +692,19 @@ int numvp(){
 int numpp(){
   return retNumpp();
 }
+
+int init_mylock(){
+  return 0;
+}
+
+int acquire_mylock(int id){
+  return id;
+}
+
+int release_mylock(int id){
+  return id;
+}
+
+int holding_mylock(int id){
+  return id;
+}

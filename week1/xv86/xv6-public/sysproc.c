@@ -173,3 +173,19 @@ void sys_update_cnt_2(void){
 int sys_display_count_2(void){
   return counter_2;
 }
+
+int sys_init_mylock(){
+  return init_mylock();
+}
+
+int sys_acquire_mylock(int id){
+  return acquire_mylock(id);
+}
+
+int sys_release_mylock(int id){
+  return release_mylock(id);
+}
+
+int sys_holding_mylock(int id){
+  return holding_mylock(id);
+}

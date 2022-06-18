@@ -42,7 +42,7 @@ forktest(void)
   int n, pid;
 
   printf(1, "fork test\n");
-  2c:	68 a8 03 00 00       	push   $0x3a8
+  2c:	68 c8 03 00 00       	push   $0x3c8
   31:	6a 01                	push   $0x1
   33:	e8 c8 ff ff ff       	call   0 <printf>
 
@@ -86,14 +86,14 @@ forktest(void)
     printf(1, "fork claimed to work N times!\n", N);
   77:	83 ec 04             	sub    $0x4,%esp
   7a:	68 e8 03 00 00       	push   $0x3e8
-  7f:	68 e8 03 00 00       	push   $0x3e8
+  7f:	68 08 04 00 00       	push   $0x408
   84:	6a 01                	push   $0x1
   86:	e8 75 ff ff ff       	call   0 <printf>
     exit();
   8b:	e8 f8 01 00 00       	call   288 <exit>
       printf(1, "wait stopped early\n");
   90:	83 ec 08             	sub    $0x8,%esp
-  93:	68 b3 03 00 00       	push   $0x3b3
+  93:	68 d3 03 00 00       	push   $0x3d3
   98:	6a 01                	push   $0x1
   9a:	e8 61 ff ff ff       	call   0 <printf>
       exit();
@@ -111,7 +111,7 @@ forktest(void)
 
   printf(1, "fork test OK\n");
   ae:	83 ec 08             	sub    $0x8,%esp
-  b1:	68 da 03 00 00       	push   $0x3da
+  b1:	68 fa 03 00 00       	push   $0x3fa
   b6:	6a 01                	push   $0x1
   b8:	e8 43 ff ff ff       	call   0 <printf>
 }
@@ -121,7 +121,7 @@ forktest(void)
   c4:	c3                   	ret    
     printf(1, "wait got too many\n");
   c5:	83 ec 08             	sub    $0x8,%esp
-  c8:	68 c7 03 00 00       	push   $0x3c7
+  c8:	68 e7 03 00 00       	push   $0x3e7
   cd:	6a 01                	push   $0x1
   cf:	e8 2c ff ff ff       	call   0 <printf>
     exit();
@@ -677,6 +677,30 @@ SYSCALL(update_cnt_2)
  39f:	c3                   	ret    
 
 000003a0 <display_count_2>:
+SYSCALL(display_count_2)
  3a0:	b8 25 00 00 00       	mov    $0x25,%eax
  3a5:	cd 40                	int    $0x40
  3a7:	c3                   	ret    
+
+000003a8 <init_mylock>:
+SYSCALL(init_mylock)
+ 3a8:	b8 26 00 00 00       	mov    $0x26,%eax
+ 3ad:	cd 40                	int    $0x40
+ 3af:	c3                   	ret    
+
+000003b0 <acquire_mylock>:
+SYSCALL(acquire_mylock)
+ 3b0:	b8 27 00 00 00       	mov    $0x27,%eax
+ 3b5:	cd 40                	int    $0x40
+ 3b7:	c3                   	ret    
+
+000003b8 <release_mylock>:
+SYSCALL(release_mylock)
+ 3b8:	b8 28 00 00 00       	mov    $0x28,%eax
+ 3bd:	cd 40                	int    $0x40
+ 3bf:	c3                   	ret    
+
+000003c0 <holding_mylock>:
+ 3c0:	b8 29 00 00 00       	mov    $0x29,%eax
+ 3c5:	cd 40                	int    $0x40
+ 3c7:	c3                   	ret    

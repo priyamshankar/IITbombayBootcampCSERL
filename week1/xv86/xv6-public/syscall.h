@@ -37,3 +37,7 @@
 #define SYS_init_counter_2  35
 #define SYS_update_cnt_2    36
 #define SYS_display_count_2 37
+#define SYS_init_mylock     38
+#define SYS_acquire_mylock  39
+#define SYS_release_mylock  40
+#define SYS_holding_mylock  41

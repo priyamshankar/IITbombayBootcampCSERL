@@ -125,6 +125,10 @@ int             getppid(void);
 void            signalProcess(int, char[]);
 int             numvp(void);
 int             numpp(void);
+int             init_mylock(void);
+int             acquire_mylock(int);
+int             release_mylock(int);
+int             holding_mylock(int);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

@@ -40,7 +40,10 @@ int  display_count_1(void);
 void init_counter_2(void);
 void update_cnt_2(int);
 int  display_count_2(void);
-
+int init_mylock(void);
+int acquire_mylock(int);
+int release_mylock(int);
+int holding_mylock(int);
 
 // ulib.c
 int stat(const char*, struct stat*);
