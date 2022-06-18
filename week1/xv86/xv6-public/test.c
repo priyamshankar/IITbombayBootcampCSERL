@@ -19,8 +19,10 @@ int main(void)
                the lock in two scenarios - i) when the lock is held and ii) when the lock is not held. 
     */
     // printf(1,"init: %d\nacq: %d \nrel: %d \nhol: %d\n", init_mylock(),acquire_mylock(11), release_mylock(12),holding_mylock(13));
-    printf(1,"%d\n",init_mylock());
-    printf(1,"%d\n",init_mylock());
+
+    // printf(1,"%d\n",init_mylock());
+    init_mylock();
+    printf(1,"%d\n",acquire_mylock(0));
 
     
     for(int i=0; i<10000; i++){

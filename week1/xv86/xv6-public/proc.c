@@ -700,7 +700,8 @@ int init_mylock(){
 
 int acquire_mylock(int id){
   argint(0,&id);
-  return id;
+  // return id;
+  return acquire_mylockLC(&ptable.lock, id);
 }
 
 int release_mylock(int id){

@@ -10,6 +10,6 @@ struct spinlock {
 
   // int id[10];       // id for the my locks entered manually.
   uint exists[10];
-  int status[10];
+  uint status[10];
 };
 

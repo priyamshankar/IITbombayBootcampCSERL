@@ -139,3 +139,15 @@ int init_mylockLC(struct spinlock *lk){
   }
 
 }
+
+int acquire_mylockLC(struct spinlock *lk,int id){
+  pushcli();
+  if(lk->status[id]==0 && lk->exists[id]==1){
+    while(xchg(&lk->locked, 1) != 0 && xchg(&lk->status[id], 1) != 0)
+      // cprintf("1");
+      ;
+  }
+  
+  // __sync_synchronize();
+  return 0;
+}

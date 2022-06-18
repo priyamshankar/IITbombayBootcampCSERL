@@ -142,6 +142,7 @@ void            release(struct spinlock*);
 void            pushcli(void);
 void            popcli(void);
 int             init_mylockLC(struct spinlock*);
+int             acquire_mylockLC(struct spinlock*, int);
 
 // sleeplock.c
 void            acquiresleep(struct sleeplock*);
