@@ -23,8 +23,10 @@ int main(void)
     // printf(1,"%d\n",init_mylock());
     init_mylock();
     printf(1,"%d\n",acquire_mylock(0));
+    printf(1,"%d\n",release_mylock(0));
+    // printf(1,"hello spinlocks");
 
-    printf(1,"hello spinlocks");
+
     for(int i=0; i<10000; i++){
         update_cnt();
     }

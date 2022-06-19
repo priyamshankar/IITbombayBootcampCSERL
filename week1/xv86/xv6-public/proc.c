@@ -706,10 +706,10 @@ int acquire_mylock(int id){
 
 int release_mylock(int id){
   argint(0,&id);
-  return id;
+  return release_mylockLC(&ptable.lock, id);
 }
 
 int holding_mylock(int id){
   argint(0,&id);
-  return id;
+  return holding_mylockLC(&ptable.lock, id);
 }

@@ -141,18 +141,47 @@ int init_mylockLC(struct spinlock *lk)
 int acquire_mylockLC(struct spinlock *lk, int id)
 {
   pushcli();
-  if (lk->status[id] == 0 && lk->exists[id] == 1)
+  if (lk->exists[id] == 1)
   {
-      cprintf("111\n");
+    cprintf("111\n");
 
     while (xchg(&lk->locked, 1) != 0 && xchg(&lk->status[id], 1) != 0)
-    // while(1)
+      // while(1)
       cprintf("1");
-      ;
+    ;
     // return id;
     cprintf("112\n");
   }
+  else {
+    return -1;
+  }
+ 
   __sync_synchronize();
   return 0;
 }
 
+int release_mylockLC(struct spinlock *lk, int id)
+{
+  if(lk->status[id]==1){
+  lk->status[id]=0;
+  __sync_synchronize();
+  asm volatile("movl $0, %0"
+               : "+m"(lk->locked)
+               :);
+               
+  return 1;
+  }
+  else{
+    return -1;
+  }
+  return -1;
+}
+
+int holding_mylockLC(struct spinlock *lk, int id){
+  // return id;
+  int r;
+  pushcli();
+  r=lk->status[id] && lk->locked;
+  popcli();
+  return r;
+}
