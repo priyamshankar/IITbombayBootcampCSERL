@@ -22,21 +22,24 @@ int main(void)
     */
 
     // Hint: Implement one locking system for this counter variable
-    
+    int id = init_mylock();
+    // int id=0;
+    acquire_mylock(id);
     for(int i=0; i<10000; i++){
         update_cnt_1(display_count()+1);
     }
-
+    release_mylock(id);
     if(ret1 == 0){
         // Hint: Implement one locking system for this counter variable
-
+        int id2=init_mylock();
+        acquire_mylock(id2);
         init_counter_2();
         int ret2 = fork(); //creates child process 2
 
         for(int j=0; j<10000; j++){
             update_cnt_2(display_count_2()+1);
         }
-
+        release_mylock(id2);
         if(ret2==0)
             exit();
         else{

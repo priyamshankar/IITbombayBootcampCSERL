@@ -702,6 +702,8 @@ int acquire_mylock(int id){
   argint(0,&id);
   // return id;
   return acquire_mylockLC(&ptable.lock, id);
+  // acquire(&ptable.lock);
+return 0;
 }
 
 int release_mylock(int id){

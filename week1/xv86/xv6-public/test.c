@@ -6,8 +6,11 @@ int main(void)
 {
 
     init_counter();
+    // printf(1,"count lock\n");
 
     int ret = fork();
+    // printf(1,"fork lock\n");
+
 
     /* This is where we increment the global counter
        Modify this to ensure race conditions do not mess up final value
@@ -21,12 +24,16 @@ int main(void)
                the lock in two scenarios - i) when the lock is held and ii) when the lock is not held.
     */
     int id = init_mylock();
+    id=0;
+    // printf(1,"before lock\n");
+    // printf(1,"acq%d\n",acquire_mylock(id));
     acquire_mylock(id);
-    // printf(1,"hello spinlocks");
+    // printf(1,"after lock\n");
     for (int i = 0; i < 10000; i++)
     {
         update_cnt();
     }
+    printf(1,"hold check: %d\n",holding_mylock(id));
     release_mylock(id);
 
     if (ret == 0)
@@ -44,8 +51,8 @@ int main(void)
     }
     else
     {
-        // acquire_mylock(id);
         wait();
+        // acquire_mylock(id);
         printf(1, "%d\n", display_count());
         // release_mylock(id);
         exit();
