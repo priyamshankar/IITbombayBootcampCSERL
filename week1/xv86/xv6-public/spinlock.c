@@ -140,48 +140,59 @@ int init_mylockLC(struct spinlock *lk)
 
 int acquire_mylockLC(struct spinlock *lk, int id)
 {
+  cprintf("%d\n", lk->locked);
+  cprintf("%d\n", lk->status[id]);
+
   pushcli();
   if (lk->exists[id] == 1)
   {
     cprintf("111\n");
-
-    while (xchg(&lk->locked, 1) != 0 && xchg(&lk->status[id], 1) != 0)
-      // while(1)
-      cprintf("1");
-    ;
-    // return id;
-    cprintf("112\n");
+    lk->status[id]=1;
+    // cprintf("xchg%d\n",xchg(&lk->locked, 1));
+    lk->locked=1;
+    // cprintf("xchg%d\n",xchg(&lk->locked, 1));
+  // while (xchg(&lk->locked, 1) != 0)
+  //   {
+  //     cprintf("inside while 1\n");
+  //   }
+    __sync_synchronize();
+    cprintf("lock %d\n", lk->locked);
+    cprintf("status %d\n", lk->status[id]);
   }
-  else {
+  else
+  {
     return -1;
   }
- 
-  __sync_synchronize();
+
   return 0;
 }
 
 int release_mylockLC(struct spinlock *lk, int id)
 {
-  if(lk->status[id]==1){
-  lk->status[id]=0;
-  __sync_synchronize();
-  asm volatile("movl $0, %0"
-               : "+m"(lk->locked)
-               :);
-               
-  return 1;
+  if (lk->status[id] == 1)
+  {
+    lk->status[id] = 0;
+    __sync_synchronize();
+    lk->status[id]=0;
+    asm volatile("movl $0, %0"
+                 : "+m"(lk->locked)
+                 :);
+
+    return 1;
   }
-  else{
+  else
+  {
     return -1;
   }
   return -1;
 }
 
-int holding_mylockLC(struct spinlock *lk, int id){
+int holding_mylockLC(struct spinlock *lk, int id)
+{
   // return id;
   int r;
   pushcli();
-  r=lk->status[id] && lk->locked;
+  r = lk->status[id] && lk->locked;
   popcli();
   return r;
 }

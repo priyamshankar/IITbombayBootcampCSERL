@@ -135,7 +135,10 @@ void sys_init_counter(void){
 }
 
 void sys_update_cnt(void){
+  // acquire_mylock(0);
   counter = counter + 1;
+  // cprintf("%d\n",holding_mylock(3));
+  // release_mylock(0);
 }
 
 int sys_display_count(void){
