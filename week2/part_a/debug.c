@@ -13,11 +13,11 @@ int main(int argc, char **argv)
         exit();
     }
     char **args = argv;
-    for (int i = 1; i < argc; i++)
-    {
-        args[i - 1] = argv[i];
-    }
-    args[argc - 1] = NULL;
+    // for (int i = 1; i < argc; i++)
+    // {
+    //     args[i - 1] = argv[i];
+    // }
+    // args[argc - 1] = NULL;
 
     // Implement your code here
     for (int i = 0; i < argc; i++)
@@ -31,9 +31,9 @@ int main(int argc, char **argv)
         }
         else
         {
-            int reaped_pid = wait();
+            // int reaped_pid = wait();
             exec(argv[i], args);
-            printf(1, "%d", reaped_pid);
+            // printf(1, "%d", reaped_pid);
         }
     }
     //

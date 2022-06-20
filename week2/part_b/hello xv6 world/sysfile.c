@@ -465,9 +465,9 @@ int sys_helloYou(void)
 {
   // char *argv[MAXARG];
   char *path;
-  begin_op();
+  // begin_op();
   argstr(0, &path);
   cprintf("this is the helloYou syscall called %s\n", path);
-  end_op();
+  // end_op();
   return 0;
 }

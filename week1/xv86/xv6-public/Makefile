@@ -193,11 +193,11 @@ UPROGS=\
 	_test-mmap\
 	_test-numppvp\
 	_test\
+	_cmd\
 	_test-multiprocess\
 	_pri\
 	_appPid\
 	_tes\
-	_cmd\
 	
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
