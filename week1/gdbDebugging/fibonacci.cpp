@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     int next = second_last + last;
     cout << next << endl;
     second_last = last;
-    last = next;
+    last = next;        // here is the problem
   }
 
   return 0;

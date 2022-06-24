@@ -85,10 +85,11 @@ int sys_uptime(void)
   return xticks;
 }
 
-// int sys_hello(void)
-// {
-//   return 0;   //commenting this line resolved the error
-// }            //seems like this file serves another purpose, need not to write every syscall init
+int sys_hello(void)
+{
+  
+  return 0;   //commenting this line resolved the error
+}            //seems like this file serves another purpose, need not to write every syscall init
 
 int sys_getppid(void)
 {

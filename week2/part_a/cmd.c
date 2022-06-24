@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 
         int ret = fork();
 
-        if (ret <= 0)
+        if (ret = 0)
         {
             exit();
         }

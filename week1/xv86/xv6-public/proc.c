@@ -615,9 +615,9 @@ int get_siblings_info(int pid)
   {
     if (p->parent->pid == pid)
     {
-      cprintf("%d %s\n", p->pid, states[p->state]);
-      cprintf("ppid here%d\n", p->parent->pid);
-      cprintf("ppid func%d\n", getppid());
+      cprintf("%d %s\n", p->pid, states[p->state]);//p->states return integer
+      // cprintf("ppid here%d\n", p->parent->pid);
+      // cprintf("ppid func%d\n", getppid());
     }
     // cprintf("%d\n", p->pid);
 

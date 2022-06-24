@@ -13,36 +13,38 @@ int main(int argc, const char **argv)
 	int pid = getpid();
 	int i;
 	// Set the Process types
-	for(i=0; i<n; i++)
+	for (i = 0; i < n; i++)
 	{
-		procType[i] = atoi(argv[i+2]);
+		procType[i] = atoi(argv[i + 2]);
 	}
 	// Execute the children programmes
-	for(i=0;i<n;i++)
+	for (i = 0; i < n; i++)
 	{
 		int ret;
 		ret = fork();
-		if(ret == 0)
+		if (ret == 0)
 		{
-			if(procType[i] == 0)
+			if (procType[i] == 0)
 			{
 				sleep(10000);
 			}
 			else if (procType[i] == 1)
 			{
-				while(1){}
+				while (1)
+				{
+				}
 			}
 			exit();
 		}
-		else if(ret>0) pids[i] = ret;
+		else if (ret > 0)
+			pids[i] = ret;
 
-	printf(1,"ppid is %d\n",getppid());
-
+		// printf(1, "ppid is %d\n", getppid());
 	}
 
 	int ret;
 	ret = fork();
-	if(ret == 0)
+	if (ret == 0)
 	{
 		sleep(100);
 		exit();
@@ -58,7 +60,7 @@ int main(int argc, const char **argv)
 		kill(pids[i]);
 	}
 
-	for(i = 0; i< n; i++)
+	for (i = 0; i < n; i++)
 		wait();
 
 	exit();
