@@ -456,11 +456,11 @@ int sys_pipe(void)
   return 0;
 }
 
-int sys_hello(void)
-{
-  cprintf("Hi! Welcome to the world of xv6!\n");
-  return 0;
-}
+// int sys_hello(void)
+// {
+//   cprintf("Hi! Welcome to the world of xv6!\n");
+//   return 0;
+// }
 int sys_helloYou(void)
 {
   // char *argv[MAXARG];
